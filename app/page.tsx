@@ -5,8 +5,7 @@ import Image from 'next/image'
 import "./globals.css"
 import loading from '../assets/loading-infinity.svg'
 
-import { Header } from '@/components/Header/Header'
-import { Footer } from '@/components/Footer/Footer'
+
 import { instance } from '@/config/axios'
 
 interface Restaurant {
@@ -14,7 +13,6 @@ interface Restaurant {
   name?: string
   image?: string
   tags?: string[]
-  logotype?: string
 }
 
 interface RestaurantData {
@@ -29,13 +27,12 @@ export default function Home() {
     instance.get('/user/restaurant').then((res: any) => setData(res.data.data))
   }, [])
 
-  if (!data) return <Image src={loading} alt='loading' className='w-50 h-50' />
+  if (!data) return <div className="min-h-[700px] flex flex-col justify-center items-center"><Image src={loading} alt='loading' className='w-50 h-50' /></div>
 
   console.log(data);
 
   return (
     <>
-      <Header />
       <main className="home-page page w-full max-w-full !px-[24px] flex flex-col items-center">
         <section className="main-sect w-full max-w-[1080px]">
           <h2 className="block-title text-[#12282F] text-[32px] font-bold leading-[130%] tracking-normal">Restoranlar</h2>
@@ -54,7 +51,6 @@ export default function Home() {
           </section>
         </section>
       </main>
-      <Footer />
     </>
   )
 }

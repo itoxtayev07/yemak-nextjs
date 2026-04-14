@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef } from 'react'
 import Image from 'next/image'
 
@@ -15,7 +17,7 @@ import user from '../../assets/user.svg'
 export function Header() {
     const inputRef = useRef<HTMLInputElement>(null)
 
-    return <header className="header w-full max-w-full !px-[24px] sticky top-0 z-[10] flex justify-center items-center bg-[#FFF]">
+    return <header className="header w-full max-w-full !mb-[24px] !px-[24px] sticky top-0 z-[10] flex justify-center items-center bg-[#FFF]">
         <section className="header-sect w-full max-w-[1080px] !py-[18px] flex justify-between items-center gap-[16px]">
             <section className="search-sect w-full max-w-[740px] flex justify-between items-center">
                 <a className='cursor-pointer' href='/'><Image src={logo} alt='' /></a>

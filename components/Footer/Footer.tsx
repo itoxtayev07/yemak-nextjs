@@ -14,7 +14,7 @@ export function Footer() {
   let fonts = 'font-semibold text-[16px] leading-[130%] tracking-normal text-center hover:text-[]'
   let apps = 'min-w-[160px] !p-[12px] flex items-center justify-center gap-[8px] rounded-[12px] bg-[#F7F7F7]'
   let widgetDescr = ['flex flex-col justify-center', 'text-[#B0B7BA] text-[12px] leading-[130%] tracking-normal text-center', 'text-[#12282F] text-[14px] leading-[130%] tracking-normal text-center']
-  return <footer className="footer w-full max-w-full !mt-[16px] flex flex-col justify-center justify-self-center items-center bg-[#FFF]">
+  return <footer className="footer w-full max-w-full h-full !mt-[40px] flex flex-col items-center bg-[#FFF]">
 
     <section className="w-full max-w-full !px-[24px] !pt-[24px] !pb-[52px] flex justify-center">
       <div className="w-full max-w-[1080px] flex justify-between items-end gap-[24px]">
