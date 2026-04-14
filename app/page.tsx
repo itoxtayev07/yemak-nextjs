@@ -6,7 +6,8 @@ import "./globals.css"
 import loading from '../assets/loading-infinity.svg'
 
 import { Header } from '@/components/Header/Header'
-import { instance } from '@/axios'
+import { Footer } from '@/components/Footer/Footer'
+import { instance } from '@/config/axios'
 
 interface Restaurant {
   id?: number
@@ -53,6 +54,7 @@ export default function Home() {
           </section>
         </section>
       </main>
+      <Footer />
     </>
   )
 }
