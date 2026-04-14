@@ -5,8 +5,8 @@ import Image from 'next/image'
 import "./globals.css"
 import loading from '../assets/loading-infinity.svg'
 
-
 import { instance } from '@/config/axios'
+import { Categorys } from '@/components/Categorys/Categorys'
 
 interface Restaurant {
   id?: number
@@ -27,17 +27,18 @@ export default function Home() {
     instance.get('/user/restaurant').then((res: any) => setData(res.data.data))
   }, [])
 
-  if (!data) return <div className="min-h-[700px] flex flex-col justify-center items-center"><Image src={loading} alt='loading' className='w-50 h-50' /></div>
+  if (!data) return <div className="flex flex-col justify-center items-center"><Image src={loading} alt='loading' className='w-50 h-50' /></div>
 
   console.log(data);
 
   return (
     <>
       <main className="home-page page w-full max-w-full !px-[24px] flex flex-col items-center">
-        <section className="main-sect w-full max-w-[1080px]">
-          <h2 className="block-title text-[#12282F] text-[32px] font-bold leading-[130%] tracking-normal">Restoranlar</h2>
+        <section className="main-sect w-full max-w-[1080px] flex flex-col">
+          <h2 className="block-title text-[#12282F] text-[32px] font-bold leading-[130%] tracking-normal">Ommabop buyurtmalar</h2>
+          <Categorys />
 
-          <section className="restaurant-list w-full max-w-full !mt-[20px] flex flex-wrap gap-[24px]">
+          <section className="restaurant-list w-full max-w-full !mt-[32px] flex flex-wrap gap-[24px]">
             {data.restaurants.map((product: any) => (
               <article key={product.id} className="restaurant-card w-full max-w-[344px] rounded-[16px] overflow-hidden border-[1px] border-[#F0F0F0] bg-[#FFF] cursor-pointer" >
                 <img className="rounded-[16px] w-full h-[192px]" src={product.image} />

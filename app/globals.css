@@ -6,6 +6,38 @@
   box-sizing: border-box;
 }
 
-img, input::placeholder {
+img,
+input::placeholder {
   user-select: none;
+}
+
+.category-sect::-webkit-scrollbar {
+  border-radius: 12px;
+  background: #FFF;
+}
+
+.category-sect::-webkit-scrollbar-track {
+  border-radius: 14px;
+  background: #FFF;
+}
+
+.category-sect::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #EDC843;
+}
+
+body,
+input,
+button {
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+@media (max-width: 1127px) {
+  .home-page .main-sect {
+    align-items: center;
+
+    .restaurant-list {
+      justify-content: center;
+    }
+  }
 }
